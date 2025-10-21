@@ -21,8 +21,8 @@ interface FormData {
   message: string;
 }
 
-// Map center coordinates
-const center: [number, number] = [36.18399, -115.95526];
+// Map center coordinates (commented out as not used)
+// const center: [number, number] = [36.18399, -115.95526];
 
 export default function CustomSelect({ }: CustomSelectProps) {
   // Contact Form States
@@ -264,8 +264,17 @@ export default function CustomSelect({ }: CustomSelectProps) {
             {/* Map Section */}
             <div>
               <h3 className="text-lg sm:text-xl font-bold text-black mb-3 sm:mb-4">Find Us</h3>
-              <div className="h-64 sm:h-80 lg:h-96 w-full relative z-10 overflow-hidden rounded-xl border-2 border-white/20 bg-gray-200 flex items-center justify-center">
-                <p className="text-gray-600 text-center">Map loading...</p>
+              <div className="h-64 sm:h-80 lg:h-96 w-full relative z-10 overflow-hidden rounded-xl border-2 border-white/20">
+                <iframe
+                  src="https://maps.google.com/maps?q=3190%20HW-160%20Suite%20F%20Pahrump%20Nevada%2089048%20United%20States&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Location Map"
+                ></iframe>
               </div>
             </div>
           </div>

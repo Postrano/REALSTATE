@@ -3,3 +3,5 @@
 - Replace <img> with <Image /> in PropertyCard.tsx (1 instance)
 - Replace <img> with <Image /> in Services.tsx (1 instance)
 - Replace <img> with <Image /> in TopNavigation.tsx (1 instance)
+- Fix unused variable in CustomSelect.tsx
+- Fix blurred logo in TopNavigation.tsx

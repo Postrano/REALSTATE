@@ -23,7 +23,7 @@ export default function TopNavigation() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/">
-              <Image src="/images/logo.webp" alt="RealEstate Logo" width={60} height={60} className="h-15 w-auto transition-transform duration-300 hover:scale-105" />
+              <Image src="/images/logo.png" alt="RealEstate Logo" width={60} height={60} className="h-15 w-auto transition-transform duration-300 hover:scale-105" priority />
             </Link>
           </div>
           <div className="hidden md:flex items-center space-x-8">

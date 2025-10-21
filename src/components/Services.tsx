@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 
 export default function Services() {
   const [isVisible, setIsVisible] = useState(false);
@@ -71,8 +72,8 @@ export default function Services() {
               }`}
               style={{ transitionDelay: `${0.4 + index * 0.2}s` }}
             >
-              <div className="h-48 overflow-hidden">
-                <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+              <div className="h-48 overflow-hidden relative">
+                <Image src={service.image} alt={service.title} fill className="object-cover transition-transform duration-300 hover:scale-105" />
               </div>
               <div className="p-6">
                 <h2 className={`text-xl font-semibold mb-3 ${service.textColor}`}>{service.title}</h2>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 
 export default function PropertyCard() {
   const [isVisible, setIsVisible] = useState(false);
@@ -73,9 +74,11 @@ export default function PropertyCard() {
             >
               <div className="lg:w-1/2">
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl group">
-                  <img
+                  <Image
                     src={section.image}
                     alt={section.alt}
+                    width={400}
+                    height={320}
                     className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

@@ -1,0 +1,5 @@
+- Fix ref cleanup in PhotoGallery.tsx useEffect
+- Replace <img> with <Image /> in PhotoGallery.tsx (3 instances)
+- Replace <img> with <Image /> in PropertyCard.tsx (1 instance)
+- Replace <img> with <Image /> in Services.tsx (1 instance)
+- Replace <img> with <Image /> in TopNavigation.tsx (1 instance)

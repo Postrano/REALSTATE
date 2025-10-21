@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 
 interface CarouselSlide {
   id: number;
@@ -39,13 +40,14 @@ export default function Carousel({ slides }: CarouselProps) {
       }
     );
 
-    if (carouselRef.current) {
-      observer.observe(carouselRef.current);
+    const currentRef = carouselRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (carouselRef.current) {
-        observer.unobserve(carouselRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -55,11 +57,12 @@ export default function Carousel({ slides }: CarouselProps) {
     <div ref={carouselRef} className="relative h-[400px] sm:h-[500px] md:h-[600px] overflow-hidden bg-white">
       <div className="absolute inset-0 bg-gray-800">
         <div className="h-full relative bg-gray-800">
-          <img
+          <Image
             src={slide.image}
             alt={slide.title}
-            className="absolute inset-0 w-full h-full object-cover object-center"
-            loading="eager"
+            fill
+            className="object-cover object-center"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-600/70 to-transparent"></div>
           <div className="absolute left-4 sm:left-8 md:left-12 top-1/2 transform -translate-y-1/2 text-white px-4 max-w-full sm:max-w-xl md:max-w-2xl z-10">

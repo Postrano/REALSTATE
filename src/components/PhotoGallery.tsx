@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 
 interface GalleryImage {
   id: number;
@@ -68,13 +69,14 @@ export default function PhotoGallery() {
       }
     );
 
-    if (galleryRef.current) {
-      observer.observe(galleryRef.current);
+    const currentRef = galleryRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (galleryRef.current) {
-        observer.unobserve(galleryRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -125,10 +127,11 @@ export default function PhotoGallery() {
                   transformStyle: 'preserve-3d'
                 }}
               >
-                <img
+                <Image
                   src={image.url}
                   alt={image.title}
-                  className="w-full h-full object-cover transition-all duration-700"
+                  fill
+                  className="object-cover transition-all duration-700"
                   style={{
                     filter: hoveredIndex === index ? 'brightness(1.1) contrast(1.1)' : 'brightness(1) contrast(1)'
                   }}
@@ -189,10 +192,11 @@ export default function PhotoGallery() {
                 }}
               >
                 {/* Background Image */}
-                <img
+                <Image
                   src={images[5].url}
                   alt="Show More"
-                  className="absolute inset-0 w-full h-full object-cover transition-all duration-700"
+                  fill
+                  className="object-cover transition-all duration-700"
                   style={{
                     filter: hoveredIndex === 5 ? 'brightness(0.8) contrast(1.1)' : 'brightness(0.7) contrast(1)'
                   }}
@@ -245,10 +249,11 @@ export default function PhotoGallery() {
                 }}
               >
                 {/* Background Image - using last image */}
-                <img
+                <Image
                   src={images[6].url}
                   alt="Show Less"
-                  className="absolute inset-0 w-full h-full object-cover transition-all duration-700"
+                  fill
+                  className="object-cover transition-all duration-700"
                   style={{
                     filter: hoveredIndex === displayedImages.length ? 'brightness(0.8) contrast(1.1)' : 'brightness(0.7) contrast(1)'
                   }}

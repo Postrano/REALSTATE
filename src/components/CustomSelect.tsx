@@ -1,9 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
 
 interface Option {
   value: string;
@@ -24,13 +21,8 @@ interface FormData {
   message: string;
 }
 
-// Fix for default markers in react-leaflet
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
-  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-});
+// Map center coordinates
+const center: [number, number] = [36.18399, -115.95526];
 
 export default function CustomSelect({ }: CustomSelectProps) {
   // Contact Form States
@@ -42,9 +34,6 @@ export default function CustomSelect({ }: CustomSelectProps) {
   const [errors, setErrors] = useState<Partial<FormData>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  // Map center coordinates
-  const center: [number, number] = [36.18399, -115.95526];
 
   // Contact Form Functions
   const validateEmail = (email: string) => {
@@ -275,21 +264,8 @@ export default function CustomSelect({ }: CustomSelectProps) {
             {/* Map Section */}
             <div>
               <h3 className="text-lg sm:text-xl font-bold text-black mb-3 sm:mb-4">Find Us</h3>
-              <div className="h-64 sm:h-80 lg:h-96 w-full relative z-10 overflow-hidden rounded-xl border-2 border-white/20">
-                <MapContainer center={center} zoom={15} style={{ height: '100%', width: '100%', zIndex: 1, position: 'relative' }}>
-                  <TileLayer
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                  />
-                  <Marker position={center}>
-                    <Popup>
-                      <strong>Marci Metzger - THE RIDGE REALTY GROUP</strong><br />
-                      3190 HW-160, Suite F<br />
-                      Pahrump, Nevada 89048, United States<br />
-                      <a href="tel:(206) 919-6886" className="text-blue-600">(206) 919-6886</a>
-                    </Popup>
-                  </Marker>
-                </MapContainer>
+              <div className="h-64 sm:h-80 lg:h-96 w-full relative z-10 overflow-hidden rounded-xl border-2 border-white/20 bg-gray-200 flex items-center justify-center">
+                <p className="text-gray-600 text-center">Map loading...</p>
               </div>
             </div>
           </div>

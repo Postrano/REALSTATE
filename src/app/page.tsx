@@ -11,6 +11,8 @@ import CustomSelect from '@/components/CustomSelect';
 import Footer from '@/components/Footer';
 // import { supabase } from '@/lib/supabase';
 
+export const dynamic = 'force-dynamic';
+
 interface Property {
   id: number;
   title: string;

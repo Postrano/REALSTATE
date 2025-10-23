@@ -79,14 +79,14 @@ export default function Services() {
   ];
 
   return (
-    <div className="py-16 mt-8 mx-4 bg-gradient-to-r from-blue-50 via-white to-blue-50 animate-bg-shift relative overflow-hidden " style={{ fontFamily: 'Arial, Helvetica, sans-serif', backgroundImage: 'url(/images/hero.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
+    <div className="py-16 mt-8 mx-4 bg-gradient-to-r from-blue-50 via-white to-blue-50 animate-bg-shift relative overflow-hidden" style={{ fontFamily: 'Arial, Helvetica, sans-serif', backgroundImage: 'url(/images/hero.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-blue-100/20 pointer-events-none"></div>
       <div className="absolute inset-0 bg-gradient-to-r from-slate-600/30 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h1 ref={headerRef} className={`text-4xl font-bold text-center mb-12 text-white transition-all duration-800 ${
           visibleElements.header ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`} style={{ transitionDelay: '0.2s' }}>Our Services</h1>
+        }`} style={{ transitionDelay: '0.2s', color: '#ffffff' }}>Our Services</h1>
 
         {/* Decorative divider */}
         <div className="flex justify-center mb-16">

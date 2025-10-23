@@ -128,13 +128,13 @@ export default function CustomSelect({ }: CustomSelectProps) {
           {/* Column 1: Send Message Form */}
           <div className="p-4 sm:p-6 lg:p-8 rounded-xl" style={{ backgroundColor: '#1E3634', color: '#ffffff' }}>
             <div className="mb-6 sm:mb-8">
-              <h2 className="text-xl sm:text-2xl font-bold  text-white mb-3 sm:mb-4">Send Message</h2>
-              <p className="text-slate-300 text-sm sm:text-base">Get in touch with us for any inquiries or questions.</p>
+              <h2 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4" style={{ color: '#ffffff' }}>Send Message</h2>
+              <p className="text-slate-300 text-sm sm:text-base" style={{ color: '#CBD5E1' }}>Get in touch with us for any inquiries or questions.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               <div>
-                <label htmlFor="name" className="block text-xs sm:text-sm font-semibold text-slate-300 mb-1 sm:mb-2">
+                <label htmlFor="name" className="block text-xs sm:text-sm font-semibold text-slate-300 mb-1 sm:mb-2" style={{ color: '#CBD5E1' }}>
                   Name
                 </label>
                 <input
@@ -146,16 +146,17 @@ export default function CustomSelect({ }: CustomSelectProps) {
                   className={`w-full px-3 py-2 sm:py-3 border rounded-lg focus:ring-2 focus:ring-blue-100 focus:border-blue-500 transition-all duration-200 bg-slate-50 text-sm sm:text-base ${
                     errors.name ? 'border-red-400 bg-red-50' : 'border-slate-300 hover:border-slate-400'
                   }`}
+                  style={{ backgroundColor: '#F8FAFC', borderColor: errors.name ? '#F87171' : '#CBD5E1', transition: 'all 0.2s ease' }}
                   placeholder="Enter your full name"
                 />
                 {errors.name && (
-                  <p className="mt-1 sm:mt-2 text-xs sm:text-sm text-red-600 font-medium">{errors.name}</p>
+                  <p className="mt-1 sm:mt-2 text-xs sm:text-sm text-red-600 font-medium" style={{ color: '#DC2626' }}>{errors.name}</p>
                 )}
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-xs sm:text-sm font-semibold text-slate-300 mb-1 sm:mb-2">
-                  Email <span className="text-red-500">*</span>
+                <label htmlFor="email" className="block text-xs sm:text-sm font-semibold text-slate-300 mb-1 sm:mb-2" style={{ color: '#CBD5E1' }}>
+                  Email <span style={{ color: '#EF4444' }}>*</span>
                 </label>
                 <input
                   type="email"
@@ -166,15 +167,16 @@ export default function CustomSelect({ }: CustomSelectProps) {
                   className={`w-full px-3 py-2 sm:py-3 border rounded-lg focus:ring-2 focus:ring-blue-100 focus:border-blue-500 transition-all duration-200 bg-slate-50 text-sm sm:text-base ${
                     errors.email ? 'border-red-400 bg-red-50' : 'border-slate-300 hover:border-slate-400'
                   }`}
+                  style={{ backgroundColor: '#F8FAFC', borderColor: errors.email ? '#F87171' : '#CBD5E1', transition: 'all 0.2s ease' }}
                   placeholder="Enter your email address"
                 />
                 {errors.email && (
-                  <p className="mt-1 sm:mt-2 text-xs sm:text-sm text-red-600 font-medium">{errors.email}</p>
+                  <p className="mt-1 sm:mt-2 text-xs sm:text-sm text-red-600 font-medium" style={{ color: '#DC2626' }}>{errors.email}</p>
                 )}
         </div>
 
               <div>
-                <label htmlFor="message" className="block text-xs sm:text-sm font-semibold text-slate-300 mb-1 sm:mb-2">
+                <label htmlFor="message" className="block text-xs sm:text-sm font-semibold text-slate-300 mb-1 sm:mb-2" style={{ color: '#CBD5E1' }}>
                   Message
                 </label>
                 <textarea
@@ -186,28 +188,30 @@ export default function CustomSelect({ }: CustomSelectProps) {
                   className={`w-full px-3 py-2 sm:py-3 border rounded-lg focus:ring-2 focus:ring-blue-100 focus:border-blue-500 transition-all duration-200 resize-none bg-slate-50 text-sm sm:text-base ${
                     errors.message ? 'border-red-400 bg-red-50' : 'border-slate-300 hover:border-slate-400'
                   }`}
+                  style={{ backgroundColor: '#F8FAFC', borderColor: errors.message ? '#F87171' : '#CBD5E1', transition: 'all 0.2s ease' }}
                   placeholder="Enter your message here..."
                 />
                 {errors.message && (
-                  <p className="mt-1 sm:mt-2 text-xs sm:text-sm text-red-600 font-medium">{errors.message}</p>
+                  <p className="mt-1 sm:mt-2 text-xs sm:text-sm text-red-600 font-medium" style={{ color: '#DC2626' }}>{errors.message}</p>
                 )}
               </div>
 
-              <div className="bg-slate-100 p-3 sm:p-4 rounded-xl border border-slate-200">
+              <div className="bg-slate-100 p-3 sm:p-4 rounded-xl border border-slate-200" style={{ backgroundColor: '#F1F5F9', borderColor: '#E2E8F0' }}>
                 <div className="flex items-start">
                   <input
                     type="checkbox"
                     id="recaptcha"
                     className="mt-1 mr-2 sm:mr-3 w-4 h-4 text-blue-600 border-2 border-slate-300 rounded focus:ring-blue-500"
+                    style={{ color: '#2563EB', borderColor: '#CBD5E1' }}
                     required
                   />
-                  <label htmlFor="recaptcha" className="text-xs sm:text-sm text-slate-600">
+                  <label htmlFor="recaptcha" className="text-xs sm:text-sm text-slate-600" style={{ color: '#475569' }}>
                     This site is protected by reCAPTCHA and the Google{' '}
-                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium" style={{ color: '#2563EB', textDecoration: 'underline' }}>
                       Privacy Policy
                     </a>{' '}
                     and{' '}
-                    <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
+                    <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium" style={{ color: '#2563EB', textDecoration: 'underline' }}>
                       Terms of Service
                     </a>{' '}
                     apply.
@@ -223,6 +227,15 @@ export default function CustomSelect({ }: CustomSelectProps) {
                     ? 'bg-slate-400 cursor-not-allowed text-white'
                     : 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg hover:shadow-xl hover:scale-105'
                 }`}
+                style={{
+                  background: isSubmitting
+                    ? 'linear-gradient(to right, #94A3B8, #94A3B8)'
+                    : 'linear-gradient(to right, #2563EB, #1D4ED8)',
+                  color: '#FFFFFF',
+                  transition: 'all 0.2s ease',
+                  transform: 'scale(1)',
+                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
+                }}
               >
                 {isSubmitting ? 'Sending...' : 'SEND MESSAGE'}
               </button>

@@ -35,6 +35,7 @@ export default function SearchBar() {
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
                 className="w-full px-3 sm:px-4 py-2.5 sm:py-3 pr-8 sm:pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent appearance-none bg-white text-sm sm:text-base text-gray-700 cursor-pointer transition-all duration-300 hover:border-gray-400 hover:shadow-md focus:shadow-lg"
+                style={{ backgroundColor: '#FFFFFF', borderColor: '#D1D5DB', color: '#374151' }}
               >
                 <option value="">Select Location</option>
                 <option value="pahrump">Pahrump</option>
@@ -59,6 +60,7 @@ export default function SearchBar() {
                 value={propertyType}
                 onChange={(e) => setPropertyType(e.target.value)}
                 className="w-full px-3 sm:px-4 py-2.5 sm:py-3 pr-8 sm:pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent appearance-none bg-white text-sm sm:text-base text-gray-700 cursor-pointer transition-all duration-300 hover:border-gray-400 hover:shadow-md focus:shadow-lg"
+                style={{ backgroundColor: '#FFFFFF', borderColor: '#D1D5DB', color: '#374151' }}
               >
                 <option value="">Property Type</option>
                 <option value="house">House</option>
@@ -84,6 +86,7 @@ export default function SearchBar() {
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
                 className="w-full px-3 sm:px-4 py-2.5 sm:py-3 pr-8 sm:pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent appearance-none bg-white text-sm sm:text-base text-gray-700 cursor-pointer transition-all duration-300 hover:border-gray-400 hover:shadow-md focus:shadow-lg"
+                style={{ backgroundColor: '#FFFFFF', borderColor: '#D1D5DB', color: '#374151' }}
               >
                 <option value="">Sort By</option>
                 <option value="price-low">Price: Low to High</option>
@@ -111,6 +114,7 @@ export default function SearchBar() {
                 value={bedrooms}
                 onChange={(e) => setBedrooms(e.target.value)}
                 className="w-full px-2 sm:px-3 md:px-4 py-2.5 sm:py-3 pr-7 sm:pr-8 md:pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent appearance-none bg-white text-xs sm:text-sm md:text-base text-gray-700 cursor-pointer transition-all duration-300 hover:border-gray-400 hover:shadow-md focus:shadow-lg"
+                style={{ backgroundColor: '#FFFFFF', borderColor: '#D1D5DB', color: '#374151' }}
               >
                 <option value="">Any</option>
                 <option value="1">1+</option>
@@ -136,6 +140,7 @@ export default function SearchBar() {
                 value={baths}
                 onChange={(e) => setBaths(e.target.value)}
                 className="w-full px-2 sm:px-3 md:px-4 py-2.5 sm:py-3 pr-7 sm:pr-8 md:pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent appearance-none bg-white text-xs sm:text-sm md:text-base text-gray-700 cursor-pointer transition-all duration-300 hover:border-gray-400 hover:shadow-md focus:shadow-lg"
+                style={{ backgroundColor: '#FFFFFF', borderColor: '#D1D5DB', color: '#374151' }}
               >
                 <option value="">Any</option>
                 <option value="1">1+</option>

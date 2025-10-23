@@ -10,11 +10,17 @@ interface GalleryImage {
 }
 
 export default function PhotoGallery() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [visibleElements, setVisibleElements] = useState({
+    header: false,
+    images: Array(7).fill(false),
+    showMore: false
+  });
   const [showAll, setShowAll] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const galleryRef = useRef<HTMLDivElement>(null);
-
+  const galleryRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const showMoreRef = useRef<HTMLDivElement>(null);
   const images: GalleryImage[] = [
     {
       id: 1,
@@ -57,38 +63,55 @@ export default function PhotoGallery() {
   const remainingCount = images.length - 5;
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const headerObserver = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        setVisibleElements(prev => ({ ...prev, header: entry.isIntersecting }));
       },
-      {
-        threshold: 0.2,
-        rootMargin: '0px'
-      }
+      { threshold: 0.2, rootMargin: '0px' }
     );
 
-    const currentRef = galleryRef.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
+    const imageObservers = displayedImages.map((_, index) => {
+      return new IntersectionObserver(
+        ([entry]) => {
+          setVisibleElements(prev => {
+            const newImages = [...prev.images];
+            newImages[index] = entry.isIntersecting;
+            return { ...prev, images: newImages };
+          });
+        },
+        { threshold: 0.2, rootMargin: '0px' }
+      );
+    });
+
+    const showMoreObserver = new IntersectionObserver(
+      ([entry]) => {
+        setVisibleElements(prev => ({ ...prev, showMore: entry.isIntersecting }));
+      },
+      { threshold: 0.2, rootMargin: '0px' }
+    );
+
+    if (headerRef.current) headerObserver.observe(headerRef.current);
+    displayedImages.forEach((_, index) => {
+      const ref = imageRefs.current[index];
+      if (ref) imageObservers[index].observe(ref);
+    });
+    if (showMoreRef.current) showMoreObserver.observe(showMoreRef.current);
 
     return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
+      headerObserver.disconnect();
+      imageObservers.forEach(observer => observer.disconnect());
+      showMoreObserver.disconnect();
     };
-  }, []);
+  }, [displayedImages]);
 
   return (
-   <div className="bg-[#1E3634] p-4 sm:p-6 lg:p-8 w-full mx-0 relative z-0 text-gray-800" >
+   <div className="bg-[#1E3634] p-4 sm:p-6 lg:p-8 w-full mx-0 text-gray-800" >
     <section ref={galleryRef} className="py-8 sm:py-12 md:py-16 lg:py-20 " >
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-gray-800">
-        <div className=" text-center text-gray-800 mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+        <div ref={headerRef} className=" text-center text-gray-800 mb-6 sm:mb-8 md:mb-10 lg:mb-12">
           <h2
             className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3 md:mb-4 transition-all duration-800 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              visibleElements.header ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
             style={{ transitionDelay: '0.2s' }}
           >
@@ -96,7 +119,7 @@ export default function PhotoGallery() {
           </h2>
           <p
             className={`text-sm sm:text-base md:text-lg text-gray-500 transition-all duration-800 px-4 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              visibleElements.header ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
             style={{ transitionDelay: '0.4s' }}
           >
@@ -108,11 +131,14 @@ export default function PhotoGallery() {
           {displayedImages.map((image, index) => (
             <div
               key={image.id}
+              ref={(el) => {
+                imageRefs.current[index] = el;
+              }}
               className={`relative overflow-hidden rounded-2xl shadow-2xl group cursor-pointer transition-all duration-800 transform-gpu ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+                visibleElements.images[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
-              style={{ 
-                transitionDelay: `${0.6 + index * 0.1}s`,
+              style={{
+                transitionDelay: '0.2s',
                 transformStyle: 'preserve-3d'
               }}
               onMouseEnter={() => setHoveredIndex(index)}
@@ -171,11 +197,12 @@ export default function PhotoGallery() {
           
           {!showAll ? (
             <div
+              ref={showMoreRef}
               className={`relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transition-all duration-800 transform-gpu ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+                visibleElements.showMore ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
-              style={{ 
-                transitionDelay: `${0.6 + 5 * 0.1}s`,
+              style={{
+                transitionDelay: '0.2s',
                 transformStyle: 'preserve-3d'
               }}
               onClick={() => setShowAll(true)}
@@ -228,11 +255,12 @@ export default function PhotoGallery() {
             </div>
           ) : (
             <div
+              ref={showMoreRef}
               className={`relative overflow-hidden rounded-2xl shadow-2xl cursor-pointer transition-all duration-800 transform-gpu ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+                visibleElements.showMore ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
-              style={{ 
-                transitionDelay: `${0.6 + 5 * 0.1}s`,
+              style={{
+                transitionDelay: '0.2s',
                 transformStyle: 'preserve-3d'
               }}
               onClick={() => setShowAll(false)}

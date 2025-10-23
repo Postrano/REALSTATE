@@ -18,7 +18,7 @@ export default function TopNavigation() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-md' : 'bg-transparent backdrop-blur-md'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-md' : 'bg-transparent backdrop-blur-md'}`} style={{ transition: 'background-color 0.5s ease, backdrop-filter 0.5s ease' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center z-[999999]">
@@ -27,13 +27,13 @@ export default function TopNavigation() {
            
           </div>
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-900 hover:text-white px-3 py-2 rounded-md text-sm font-medium font-['Helvetica'] transition-all duration-300 hover:bg-[#1E3634] hover:-translate-y-1 hover:shadow-lg transform">
+            <Link href="/" className="text-gray-900 hover:text-white px-3 py-2 rounded-md text-sm font-medium font-['Helvetica'] transition-all duration-300 hover:bg-[#1E3634] hover:-translate-y-1 hover:shadow-lg transform" style={{ transition: 'all 0.3s ease, transform 0.3s ease' }}>
              LISTINGS
             </Link>
-            <Link href="/properties" className="text-gray-900 hover:text-white px-3 py-2 rounded-md text-sm font-medium font-['Helvetica'] transition-all duration-300 hover:bg-[#1E3634] hover:-translate-y-1 hover:shadow-lg transform">
+            <Link href="/properties" className="text-gray-900 hover:text-white px-3 py-2 rounded-md text-sm font-medium font-['Helvetica'] transition-all duration-300 hover:bg-[#1E3634] hover:-translate-y-1 hover:shadow-lg transform" style={{ transition: 'all 0.3s ease, transform 0.3s ease' }}>
               LET&apos;S MOVE
             </Link>
-            <Link href="/about" className="text-gray-900 hover:text-white px-3 py-2 rounded-md text-sm font-medium font-['Helvetica'] transition-all duration-300 hover:bg-[#1E3634] hover:-translate-y-1 hover:shadow-lg transform">
+            <Link href="/about" className="text-gray-900 hover:text-white px-3 py-2 rounded-md text-sm font-medium font-['Helvetica'] transition-all duration-300 hover:bg-[#1E3634] hover:-translate-y-1 hover:shadow-lg transform" style={{ transition: 'all 0.3s ease, transform 0.3s ease' }}>
               ABOUT US
             </Link>
             {/* <Link href="/contact" className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium font-['Helvetica'] transition-colors duration-300 hover:bg-gray-100">
@@ -55,7 +55,7 @@ export default function TopNavigation() {
             </button>
           </div>
         </div>
-        <div key={isOpen ? 'open' : 'closed'} className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+        <div key={isOpen ? 'open' : 'closed'} className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`} style={{ transition: 'all 0.3s ease-in-out' }}>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-transparent backdrop-blur-md shadow-lg">
             <Link href="/" className="mobile-menu-item text-gray-900 hover:text-white block px-3 py-2 rounded-md text-base font-medium font-['Helvetica'] transition-all duration-300 hover:bg-black hover:translate-x-2 hover:scale-105">
              LISTINGS

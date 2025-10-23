@@ -155,13 +155,14 @@ export default function SearchBar() {
             <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2" style={{ color: '#374151' }}>
               Min Price
             </label>
-            <input
-              type="text"
-              placeholder="$0"
-              value={minPrice}
-              onChange={(e) => setMinPrice(e.target.value)}
-              className="w-full px-2 sm:px-3 md:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent text-xs sm:text-sm md:text-base text-gray-700 transition-all duration-300 hover:border-gray-400 hover:shadow-md focus:shadow-lg"
-            />
+              <input
+                type="text"
+                placeholder="$0"
+                value={minPrice}
+                onChange={(e) => setMinPrice(e.target.value)}
+                className="w-full px-2 sm:px-3 md:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent text-xs sm:text-sm md:text-base text-gray-700 transition-all duration-300 hover:border-gray-400 hover:shadow-md focus:shadow-lg"
+                style={{ color: '#000000', backgroundColor: '#ffffff' }}
+              />
           </div>
 
           <div>
@@ -174,6 +175,7 @@ export default function SearchBar() {
               value={maxPrice}
               onChange={(e) => setMaxPrice(e.target.value)}
               className="w-full px-2 sm:px-3 md:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-400 focus:border-transparent text-xs sm:text-sm md:text-base text-gray-700 transition-all duration-300 hover:border-gray-400 hover:shadow-md focus:shadow-lg"
+              style={{ color: '#000000', backgroundColor: '#ffffff' }}
             />
           </div>
         </div>

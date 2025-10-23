@@ -153,7 +153,8 @@ export default function PhotoGallery() {
                   transform: (hoveredIndex === index || tappedIndex === index)
                     ? 'rotateY(5deg) rotateX(-5deg) scale(1.05)'
                     : 'rotateY(0deg) rotateX(0deg) scale(1)',
-                  transformStyle: 'preserve-3d'
+                  transformStyle: 'preserve-3d',
+                  transition: 'transform 0.7s ease-out'
                 }}
               >
                 <Image

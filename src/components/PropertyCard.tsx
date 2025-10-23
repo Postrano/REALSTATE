@@ -77,7 +77,8 @@ export default function PropertyCard() {
                   visibleSections[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
                 style={{
-                  backgroundColor: index === 0 ? 'rgba(245, 245, 220, 0.9)' : index === 1 ? 'rgba(240, 255, 240, 0.9)' : 'rgba(255, 240, 245, 0.9)'
+                  backgroundColor: index === 0 ? 'rgba(245, 245, 220, 0.9)' : index === 1 ? 'rgba(240, 255, 240, 0.9)' : 'rgba(255, 240, 245, 0.9)',
+                  transition: 'opacity 1s ease, transform 1s ease'
                 }}
               >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 rounded-2xl">

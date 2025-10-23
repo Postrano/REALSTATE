@@ -114,7 +114,7 @@ export default function PhotoGallery() {
             className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3 md:mb-4 transition-all duration-800 ${
               visibleElements.header ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
-            style={{ transitionDelay: '0.2s' }}
+            style={{ transitionDelay: '0.2s', color: '#FFFFFF' }}
           >
             Photo Gallery
           </h2>
@@ -122,7 +122,7 @@ export default function PhotoGallery() {
             className={`text-sm sm:text-base md:text-lg text-white transition-all duration-800 px-4 ${
               visibleElements.header ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
-            style={{ transitionDelay: '0.4s' }}
+            style={{ transitionDelay: '0.4s', color: '#FFFFFF' }}
           >
             Explore our stunning collection of properties
           </p>
@@ -181,7 +181,7 @@ export default function PhotoGallery() {
                 {/* Content overlay */}
                 <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-all duration-500 ${tappedIndex === index ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
                   <div className={`absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 transform transition-transform duration-500 ${tappedIndex === index ? 'translate-y-0' : 'translate-y-8 group-hover:translate-y-0'}`}>
-                    <h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold mb-1 sm:mb-2 drop-shadow-lg">
+                    <h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold mb-1 sm:mb-2 drop-shadow-lg" style={{ color: '#FFFFFF' }}>
                       {image.title}
                     </h3>
                     <div className={`w-12 sm:w-16 h-1 bg-white rounded-full transform transition-transform duration-500 delay-100 ${tappedIndex === index ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></div>
@@ -237,8 +237,8 @@ export default function PhotoGallery() {
                 <div className="absolute inset-0 bg-black/60"></div>
                 
                 <div className="text-center text-white relative z-10 transform transition-transform duration-500 hover:scale-110 px-4">
-                  <div className="text-5xl sm:text-6xl md:text-7xl font-bold mb-2 sm:mb-3 animate-pulse drop-shadow-2xl">+{remainingCount}</div>
-                  <div className="text-lg sm:text-xl md:text-2xl font-semibold tracking-wide drop-shadow-lg">Show More</div>
+                  <div className="text-5xl sm:text-6xl md:text-7xl font-bold mb-2 sm:mb-3 animate-pulse drop-shadow-2xl" style={{ color: '#FFFFFF' }}>+{remainingCount}</div>
+                  <div className="text-lg sm:text-xl md:text-2xl font-semibold tracking-wide drop-shadow-lg" style={{ color: '#FFFFFF' }}>Show More</div>
                   <div className="mt-3 sm:mt-4 w-10 h-10 sm:w-12 sm:h-12 mx-auto border-3 sm:border-4 border-white rounded-full flex items-center justify-center animate-bounce">
                     <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
@@ -295,7 +295,7 @@ export default function PhotoGallery() {
                 <div className="absolute inset-0 bg-black/60"></div>
                 
                 <div className="text-center text-white relative z-10 transform transition-transform duration-500 hover:scale-110 px-4">
-                  <div className="text-lg sm:text-xl md:text-2xl font-semibold tracking-wide drop-shadow-lg mb-3 sm:mb-4">Show Less</div>
+                  <div className="text-lg sm:text-xl md:text-2xl font-semibold tracking-wide drop-shadow-lg mb-3 sm:mb-4" style={{ color: '#FFFFFF' }}>Show Less</div>
                   <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto border-3 sm:border-4 border-white rounded-full flex items-center justify-center animate-bounce">
                     <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 15l7-7 7 7" />

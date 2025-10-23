@@ -62,7 +62,7 @@ export default function Carousel({ slides }: CarouselProps) {
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(15, 23, 42, 0.4) 0%, rgba(51, 65, 85, 0.3) 50%, transparent 100%)' }}></div>
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(15, 23, 42, 0.4) 0%, rgba(51, 65, 85, 0.3) 50%, transparent 100%)', transition: 'all 0.5s ease' }}></div>
           <div className="absolute left-4 sm:left-8 md:left-12 top-1/2 transform -translate-y-1/2 text-white px-4 max-w-full sm:max-w-xl md:max-w-2xl z-10">
             <h2 
               className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-normal mb-4 sm:mb-6 tracking-wide transition-all duration-800 ${
@@ -84,15 +84,17 @@ export default function Carousel({ slides }: CarouselProps) {
             >
               {slide.description}
             </p>
-            <button 
+            <button
               className={`border-2 border-white text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full text-sm sm:text-base font-normal hover:bg-white hover:text-gray-800 transition-opacity duration-800 ${
-                isVisible 
-                  ? 'opacity-100' 
+                isVisible
+                  ? 'opacity-100'
                   : 'opacity-0'
               }`}
-              style={{ 
+              style={{
                 transitionDelay: '0.9s',
-                transition: 'background-color 0.2s ease, color 0.2s ease, opacity 0.8s ease'
+                transition: 'background-color 0.2s ease, color 0.2s ease, opacity 0.8s ease',
+                borderColor: '#FFFFFF',
+                color: '#FFFFFF'
               }}
             >
               CALL NOW

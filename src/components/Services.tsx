@@ -111,21 +111,21 @@ export default function Services() {
                 <Image src={service.image} alt={service.title} fill className="object-cover transition-transform duration-300 hover:scale-105" />
                 {/* Unique service badges */}
                 <div className="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg">
-                  {index === 0 && <span className="text-xl font-bold text-gray-700">1</span>}
-                  {index === 1 && <span className="text-xl font-bold text-gray-700">2</span>}
-                  {index === 2 && <span className="text-xl font-bold text-gray-700">3</span>}
+                  {index === 0 && <span className="text-xl font-bold text-gray-700" style={{ color: '#374151' }}>1</span>}
+                  {index === 1 && <span className="text-xl font-bold text-gray-700" style={{ color: '#374151' }}>2</span>}
+                  {index === 2 && <span className="text-xl font-bold text-gray-700" style={{ color: '#374151' }}>3</span>}
                 </div>
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="p-6 relative">
-                <h2 className={`text-xl font-semibold mb-3 ${service.textColor} flex items-center gap-2`}>
-                  {index === 0 && <span className="text-gray-600">●</span>}
-                  {index === 1 && <span className="text-gray-600">●</span>}
-                  {index === 2 && <span className="text-gray-600">●</span>}
+                <h2 className={`text-xl font-semibold mb-3 ${service.textColor} flex items-center gap-2`} style={{ color: '#000000' }}>
+                  {index === 0 && <span style={{ color: '#4B5563' }}>●</span>}
+                  {index === 1 && <span style={{ color: '#4B5563' }}>●</span>}
+                  {index === 2 && <span style={{ color: '#4B5563' }}>●</span>}
                   {service.title}
                 </h2>
-                <p className={`text-sm leading-relaxed ${service.textColor} opacity-90`}>{service.description}</p>
+                <p className={`text-sm leading-relaxed ${service.textColor} opacity-90`} style={{ color: '#000000' }}>{service.description}</p>
                 {/* Bottom accent */}
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gray-400 to-gray-600"></div>
               </div>

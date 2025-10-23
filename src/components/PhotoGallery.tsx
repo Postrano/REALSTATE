@@ -179,7 +179,7 @@ export default function PhotoGallery() {
                 ></div>
                 
                 {/* Content overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-all duration-500 ${tappedIndex === index ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+                <div className={`absolute inset-0 transition-all duration-500 ${tappedIndex === index ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} style={{ background: 'linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%)', transition: 'opacity 0.5s ease' }}>
                   <div className={`absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 transform transition-transform duration-500 ${tappedIndex === index ? 'translate-y-0' : 'translate-y-8 group-hover:translate-y-0'}`}>
                     <h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold mb-1 sm:mb-2 drop-shadow-lg" style={{ color: '#FFFFFF' }}>
                       {image.title}

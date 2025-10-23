@@ -17,6 +17,7 @@ export default function PhotoGallery() {
   });
   const [showAll, setShowAll] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [tappedIndex, setTappedIndex] = useState<number | null>(null);
   const galleryRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -143,12 +144,14 @@ export default function PhotoGallery() {
               }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
+              onTouchStart={() => setTappedIndex(index)}
+              onTouchEnd={() => setTimeout(() => setTappedIndex(null), 1500)}
             >
               <div 
                 className="aspect-[4/3] relative transition-transform duration-700 ease-out"
                 style={{
-                  transform: hoveredIndex === index 
-                    ? 'rotateY(5deg) rotateX(-5deg) scale(1.05)' 
+                  transform: (hoveredIndex === index || tappedIndex === index)
+                    ? 'rotateY(5deg) rotateX(-5deg) scale(1.05)'
                     : 'rotateY(0deg) rotateX(0deg) scale(1)',
                   transformStyle: 'preserve-3d'
                 }}
@@ -159,7 +162,7 @@ export default function PhotoGallery() {
                   fill
                   className="object-cover transition-all duration-700"
                   style={{
-                    filter: hoveredIndex === index ? 'brightness(1.1) contrast(1.1)' : 'brightness(1) contrast(1)'
+                    filter: (hoveredIndex === index || tappedIndex === index) ? 'brightness(1.1) contrast(1.1)' : 'brightness(1) contrast(1)'
                   }}
                 />
                 
@@ -175,18 +178,18 @@ export default function PhotoGallery() {
                 ></div>
                 
                 {/* Content overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
-                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-all duration-500 ${tappedIndex === index ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+                  <div className={`absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 transform transition-transform duration-500 ${tappedIndex === index ? 'translate-y-0' : 'translate-y-8 group-hover:translate-y-0'}`}>
                     <h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold mb-1 sm:mb-2 drop-shadow-lg">
                       {image.title}
                     </h3>
-                    <div className="w-12 sm:w-16 h-1 bg-white rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-100"></div>
+                    <div className={`w-12 sm:w-16 h-1 bg-white rounded-full transform transition-transform duration-500 delay-100 ${tappedIndex === index ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></div>
                   </div>
                 </div>
                 
                 {/* 3D border effect */}
-                <div 
-                  className="absolute inset-0 border-2 sm:border-4 border-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                <div
+                  className={`absolute inset-0 border-2 sm:border-4 border-white/20 rounded-2xl transition-opacity duration-500 ${tappedIndex === index ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
                   style={{
                     transform: 'translateZ(20px)'
                   }}

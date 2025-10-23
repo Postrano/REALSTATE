@@ -126,7 +126,7 @@ export default function CustomSelect({ }: CustomSelectProps) {
       <div className="p-4 sm:p-6 lg:p-8 w-full mx-0 relative z-0" style={{ backgroundColor: '#1E3634' }}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 w-full">
           {/* Column 1: Send Message Form */}
-          <div className="p-4 sm:p-6 lg:p-8 rounded-xl" style={{ backgroundColor: '#1E3634' }}>
+          <div className="p-4 sm:p-6 lg:p-8 rounded-xl" style={{ backgroundColor: '#1E3634', color: '#ffffff' }}>
             <div className="mb-6 sm:mb-8">
               <h2 className="text-xl sm:text-2xl font-bold  text-white mb-3 sm:mb-4">Send Message</h2>
               <p className="text-slate-300 text-sm sm:text-base">Get in touch with us for any inquiries or questions.</p>

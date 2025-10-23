@@ -62,7 +62,7 @@ export default function Carousel({ slides }: CarouselProps) {
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-700/60 to-transparent"></div>
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(15, 23, 42, 0.4) 0%, rgba(51, 65, 85, 0.3) 50%, transparent 100%)' }}></div>
           <div className="absolute left-4 sm:left-8 md:left-12 top-1/2 transform -translate-y-1/2 text-white px-4 max-w-full sm:max-w-xl md:max-w-2xl z-10">
             <h2 
               className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-normal mb-4 sm:mb-6 tracking-wide transition-all duration-800 ${

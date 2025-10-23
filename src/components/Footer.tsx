@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
+    <footer className="bg-gray-900 text-white" style={{ fontFamily: 'Arial, Helvetica, sans-serif', backgroundColor: 'oklch(21% .034 264.665)' }}>
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-8 mb-8">

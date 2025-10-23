@@ -78,14 +78,16 @@ export default function PropertyCard() {
                 }`}
                 style={{
                   backgroundColor: index === 0 ? 'rgba(245, 245, 220, 0.9)' : index === 1 ? 'rgba(240, 255, 240, 0.9)' : 'rgba(255, 240, 245, 0.9)',
-                  transition: 'opacity 1s ease, transform 1s ease'
+                  transition: 'opacity 1s ease, transform 1s ease',
+                  transform: visibleSections[index] ? 'translateY(0)' : 'translateY(2rem)',
+                  opacity: visibleSections[index] ? 1 : 0
                 }}
               >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 rounded-2xl">
                   <div className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 ${index % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
                     <div className={`md:w-1/2 transition-all duration-1000 ${
                       visibleSections[index] ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-[-50px]'
-                    }`} style={{ transitionDelay: '0.2s' }}>
+                    }`} style={{ transitionDelay: '0.2s', transition: 'opacity 1s ease, transform 1s ease', transform: visibleSections[index] ? 'translateX(0)' : 'translateX(-3.125rem)', opacity: visibleSections[index] ? 1 : 0 }}>
                       <div className="relative overflow-hidden rounded-2xl shadow-2xl group">
                         <Image
                           src={section.image}
@@ -115,7 +117,7 @@ export default function PropertyCard() {
                     </div>
                     <div className={`md:w-1/2 text-center md:text-left transition-all duration-1000 ${
                       visibleSections[index] ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-[50px]'
-                    }`} style={{ transitionDelay: '0.4s' }}>
+                    }`} style={{ transitionDelay: '0.4s', transition: 'opacity 1s ease, transform 1s ease', transform: visibleSections[index] ? 'translateX(0)' : 'translateX(3.125rem)', opacity: visibleSections[index] ? 1 : 0 }}>
                       <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 leading-tight" style={{
                         color: index === 0 ? '#B8860B' : index === 1 ? '#006400' : '#C71585'
                       }}>{section.title}</h2>

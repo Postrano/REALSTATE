@@ -18,13 +18,13 @@ export default function TopNavigation() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ${scrolled ? 'bg-white backdrop-blur-md shadow-xl' : 'bg-transparent'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-md' : 'bg-transparent backdrop-blur-md'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          <div className="flex items-center">
-            <Link href="/">
-              <Image src="/images/logo.png" alt="RealEstate Logo" width={60} height={60} className="h-15 w-auto transition-transform duration-300 hover:scale-105" priority />
-            </Link>
+          <div className="flex items-center z-[999999]">
+            
+            <Image src="/images/logo.png" alt="RealEstate Logo" width={60} height={60} className="h-15 w-auto transition-transform duration-300 hover:scale-105 filter-none" priority unoptimized />
+           
           </div>
           <div className="hidden md:flex items-center space-x-8">
             <Link href="/" className="text-gray-900 hover:text-white px-3 py-2 rounded-md text-sm font-medium font-['Helvetica'] transition-all duration-300 hover:bg-[#1E3634] hover:-translate-y-1 hover:shadow-lg transform">

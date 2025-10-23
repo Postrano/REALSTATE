@@ -182,7 +182,7 @@ export default function SearchBar() {
         <div className="flex justify-center sm:justify-end pt-2 sm:pt-4">
           <button
             type="submit"
-            className="w-full sm:w-auto px-8 sm:px-10 md:px-12 py-2.5 sm:py-3 bg-white text-gray-800 rounded-lg text-sm sm:text-base font-medium hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+            className="w-full sm:w-auto px-8 sm:px-10 md:px-12 py-2.5 sm:py-3 bg-gray-800 text-white rounded-lg text-sm sm:text-base font-medium hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
           >
             SEARCH NOW
           </button>

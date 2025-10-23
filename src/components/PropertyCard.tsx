@@ -57,7 +57,7 @@ export default function PropertyCard() {
   ];
 
   return (
-    <div className="py-20 bg-gradient-to-r from-blue-50 via-white to-blue-50 animate-bg-shift  shadow-2xl mx-4 relative overflow-hidden" style={{ fontFamily: 'Arial, Helvetica, sans-serif', backgroundImage: 'url(/images/hero.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
+    <div className="py-20 bg-gradient-to-r from-blue-50 via-white to-blue-50 animate-bg-shift shadow-2xl mx-4 relative overflow-hidden" style={{ fontFamily: 'Arial, Helvetica, sans-serif', backgroundImage: 'url(/images/hero.webp)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', borderRadius: '1.5rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}>
       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-blue-100/20 pointer-events-none"></div>
       <div className="absolute inset-0 bg-gradient-to-r from-slate-600/30 to-transparent"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

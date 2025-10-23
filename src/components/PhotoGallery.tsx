@@ -119,7 +119,7 @@ export default function PhotoGallery() {
             Photo Gallery
           </h2>
           <p
-            className={`text-sm sm:text-base md:text-lg text-gray-500 transition-all duration-800 px-4 ${
+            className={`text-sm sm:text-base md:text-lg text-white transition-all duration-800 px-4 ${
               visibleElements.header ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
             style={{ transitionDelay: '0.4s' }}

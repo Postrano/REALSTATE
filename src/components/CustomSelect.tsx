@@ -108,8 +108,8 @@ export default function CustomSelect({ }: CustomSelectProps) {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-xl font-semibold text-white mb-2">Message Sent Successfully!</h3>
-        <p className=" text-white mb-4">Thank you for your message. We'll get back to you soon.</p>
+        <h3 className="text-xl font-semibold text-black mb-2">Message Sent Successfully!</h3>
+        <p className=" text-black mb-4">Thank you for your message. We'll get back to you soon.</p>
         <button
           onClick={() => setIsSubmitted(false)}
           className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors"
@@ -231,30 +231,30 @@ export default function CustomSelect({ }: CustomSelectProps) {
 
           {/* Column 2: Combined Location Information and Map */}
           <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg text-black" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
-            <h2 className="text-xl sm:text-2xl font-bold text-black mb-4 sm:mb-6">Our Location</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-black mb-4 sm:mb-6" style={{ color: '#000000' }}>Our Location</h2>
 
             {/* Location Information */}
             <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
               <div>
-                <h3 className="text-base sm:text-lg font-bold text-black mb-2 sm:mb-3">Marci Metzger - THE RIDGE REALTY GROUP</h3>
-                <p className="text-black text-sm sm:text-base">
+              <h3 className="text-base sm:text-lg font-bold text-black mb-2 sm:mb-3" style={{ color: '#000000' }}>Marci Metzger - THE RIDGE REALTY GROUP</h3>
+                <p className="text-black text-sm sm:text-base" style={{ color: '#000000' }}>
                   3190 HW-160, Suite F<br />
                   Pahrump, Nevada 89048, United States
                 </p>
               </div>
 
               <div>
-                <p className="font-semibold text-black mb-1 sm:mb-2 text-sm sm:text-base">Phone</p>
-                <p className="text-black text-base sm:text-lg font-medium">(206) 919-6886</p>
+                <p className="font-semibold text-black mb-1 sm:mb-2 text-sm sm:text-base" style={{ color: '#000000' }}>Phone</p>
+                <p className="text-black text-base sm:text-lg font-medium" style={{ color: '#000000' }}>(206) 919-6886</p>
               </div>
 
               <div>
-                <h4 className="font-semibold text-black mb-2 sm:mb-3 text-sm sm:text-base">Office Hours</h4>
+                <h4 className="font-semibold text-black mb-2 sm:mb-3 text-sm sm:text-base" style={{ color: '#000000' }}>Office Hours</h4>
                 <div className="space-y-1 sm:space-y-2">
                   <p className="text-green-600 font-semibold text-sm sm:text-base">Open today</p>
-                  <p className="text-black text-sm sm:text-base font-medium">08:00 am – 07:00 pm</p>
-                  <p className="text-black text-sm sm:text-base font-medium">Open daily 8:00 am - 7:00 pm</p>
-                  <p className="text-black text-xs sm:text-sm font-medium">
+                  <p className="text-black text-sm sm:text-base font-medium" style={{ color: '#000000' }}>08:00 am – 07:00 pm</p>
+                  <p className="text-black text-sm sm:text-base font-medium" style={{ color: '#000000' }}>Open daily 8:00 am - 7:00 pm</p>
+                  <p className="text-black text-xs sm:text-sm font-medium" style={{ color: '#000000' }}>
                     Appointments outside office hours available upon request. Just call!
                   </p>
                 </div>
@@ -263,7 +263,7 @@ export default function CustomSelect({ }: CustomSelectProps) {
 
             {/* Map Section */}
             <div>
-              <h3 className="text-lg sm:text-xl font-bold text-black mb-3 sm:mb-4">Find Us</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-black mb-3 sm:mb-4" style={{ color: '#000000' }}>Find Us</h3>
               <div className="h-64 sm:h-80 lg:h-96 w-full relative z-10 overflow-hidden rounded-xl border-2 border-white/20">
                 <iframe
                   src="https://maps.google.com/maps?q=3190%20HW-160%20Suite%20F%20Pahrump%20Nevada%2089048%20United%20States&output=embed"

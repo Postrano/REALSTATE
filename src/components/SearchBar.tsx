@@ -19,7 +19,7 @@ export default function SearchBar() {
   return (
     
     <div className="bg-white shadow-2xl rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10 -mt-12 sm:-mt-16 md:-mt-20 relative z-10 max-w-7xl mx-4 sm:mx-6 lg:mx-auto">
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-black mb-4 sm:mb-6 md:mb-8 tracking-wide">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-black mb-4 sm:mb-6 md:mb-8 tracking-wide" style={{ color: '#000000' }}>
         Search Listings
       </h2>
       
@@ -27,7 +27,7 @@ export default function SearchBar() {
         {/* First Row - Location, Type, Sort By */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           <div>
-            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
+            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2" style={{ color: '#374151' }}>
               Location
             </label>
             <div className="relative">
@@ -51,7 +51,7 @@ export default function SearchBar() {
           </div>
 
           <div>
-            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
+            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2" style={{ color: '#374151' }}>
               Type
             </label>
             <div className="relative group">
@@ -76,7 +76,7 @@ export default function SearchBar() {
           </div>
 
           <div className="sm:col-span-2 lg:col-span-1">
-            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
+            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2" style={{ color: '#374151' }}>
               Sort By
             </label>
             <div className="relative group">
@@ -103,7 +103,7 @@ export default function SearchBar() {
         {/* Second Row - Bedrooms, Baths, Prices */}
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
           <div>
-            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
+            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2" style={{ color: '#374151' }}>
               Bedrooms
             </label>
             <div className="relative group">
@@ -128,7 +128,7 @@ export default function SearchBar() {
           </div>
 
           <div>
-            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
+            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2" style={{ color: '#374151' }}>
               Baths
             </label>
             <div className="relative group">
@@ -152,7 +152,7 @@ export default function SearchBar() {
           </div>
 
           <div>
-            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
+            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2" style={{ color: '#374151' }}>
               Min Price
             </label>
             <input
@@ -165,7 +165,7 @@ export default function SearchBar() {
           </div>
 
           <div>
-            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">
+            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1.5 sm:mb-2" style={{ color: '#374151' }}>
               Max Price
             </label>
             <input
@@ -183,6 +183,7 @@ export default function SearchBar() {
           <button
             type="submit"
             className="w-full sm:w-auto px-8 sm:px-10 md:px-12 py-2.5 sm:py-3 bg-gray-800 text-white rounded-lg text-sm sm:text-base font-medium hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+            style={{ backgroundColor: '#1f2937', color: '#ffffff' }}
           >
             SEARCH NOW
           </button>

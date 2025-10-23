@@ -234,7 +234,7 @@ export default function PhotoGallery() {
                 />
                 
                 {/* Dark overlay for text readability */}
-                <div className="absolute inset-0 bg-black/60"></div>
+                <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}></div>
                 
                 <div className="text-center text-white relative z-10 transform transition-transform duration-500 hover:scale-110 px-4">
                   <div className="text-5xl sm:text-6xl md:text-7xl font-bold mb-2 sm:mb-3 animate-pulse drop-shadow-2xl" style={{ color: '#FFFFFF' }}>+{remainingCount}</div>
@@ -292,7 +292,7 @@ export default function PhotoGallery() {
                 />
                 
                 {/* Dark overlay for text readability */}
-                <div className="absolute inset-0 bg-black/60"></div>
+                <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}></div>
                 
                 <div className="text-center text-white relative z-10 transform transition-transform duration-500 hover:scale-110 px-4">
                   <div className="text-lg sm:text-xl md:text-2xl font-semibold tracking-wide drop-shadow-lg mb-3 sm:mb-4" style={{ color: '#FFFFFF' }}>Show Less</div>

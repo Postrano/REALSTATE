@@ -57,7 +57,7 @@ export default function TopNavigation() {
           </div>
         </div>
         <div key={isOpen ? 'open' : 'closed'} className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`} style={{ transition: 'all 0.3s ease-in-out' }}>
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-transparent backdrop-blur-md shadow-lg">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-lg" style={{ backgroundColor: 'transparent', backdropFilter: 'blur(12px)' }}>
             <Link href="/" className="mobile-menu-item text-gray-900 hover:text-white block px-3 py-2 rounded-md text-base font-medium font-['Helvetica'] transition-all duration-300 hover:bg-black hover:translate-x-2 hover:scale-105" style={{ color: '#111827' }}>
              LISTINGS
             </Link>
